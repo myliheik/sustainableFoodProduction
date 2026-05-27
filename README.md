@@ -4,7 +4,11 @@ Towards sustainable food production
 Piipponen et al. (2026) evaluated the essential micronutrients, vitamins, and other nutrients provided by crops and grazing
 livestock using data from USDA FoodData Central (https://fdc.nal.usda.gov/). Here we update the data.
 
-Johannes' code supplementary_USDAnutrients.Rmd creates a lookup table of average nutrient content for:
+Johannes' code supplementary_USDAnutrients.Rmd creates a lookup table of average nutrient content for products by 30 nutrients:
+
+Vitamin A, RAE; Vitamin C, total ascorbic acid; Vitamin D (D2 + D3); Vitamin E (alpha-tocopherol); Thiamin; Riboflavin; Niacin; Vitamin B-6; Folate, total; Vitamin B-12; Pantothenic acid; Biotin; Choline, total; Calcium, Ca; Phosphorus, P; Chromium; Copper, Cu; Fluoride; Manganese, Mn; Molybdenum, Mo; Iodine, I; Iron, Fe; Magnesium, Mg; Selenium, Se; Zinc, Zn; Sodium, Na; Vitamin K (phylloquinone); Fiber, total dietary; Potassium, K; Protein.
+
+Products categorized as:
 
 ASF = animal-source foods
 PSF = plant-source foods
@@ -23,6 +27,10 @@ Outputs:
 Its key output is:
 
 Data/input/other/nutrients_avg_asf_psf.csv
+
+Table S6 in Supplement.
+
+![Table S6](/img/TableS6.png)
 
 That file is then used by:
 
