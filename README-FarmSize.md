@@ -22,5 +22,5 @@ Output/Dataset/GlobalFarmSizeDataset_Calibrated.shp
 
 We set farm size values to years: 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020 such that we copied the nearest calibrated mean farm size (ha) per administrative region (either 2000, 2010, or 2020) from Fortin.
 
-See **[notebooks/Adjust-Fortin-2026-farm-size-dataset](notebooks/Adjust-Fortin-2026-farm-size-dataset)**  for details and illustrative plots.
+See **[notebooks/Adjust-Fortin-2026-farm-size-dataset](notebooks/Adjust-Fortin-2026-farm-size-dataset.ipynb)**  for details and illustrative plots.
 
