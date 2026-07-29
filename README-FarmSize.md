@@ -20,7 +20,11 @@ The data (GlobalFarmSize_Dataset_v1.1.0.zip) was downloaded from Zenodo: **[http
 This file was used:
 Output/Dataset/GlobalFarmSizeDataset_Calibrated.shp
 
-We set farm size values to years: 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020 such that we copied the nearest calibrated mean farm size (ha) per administrative region (either 2000, 2010, or 2020) from Fortin.
+Initially we considered using Fortin's estimates for 2010 and 2020 (CALIB-variables) to estimate the full time series 1992-2020, but the data did not look convincing, see details in **[notebooks/Adjust-Fortin-2026-farm-size-dataset](notebooks/Adjust-Fortin-2026-farm-size-dataset.ipynb)**.
 
-See **[notebooks/Adjust-Fortin-2026-farm-size-dataset](notebooks/Adjust-Fortin-2026-farm-size-dataset.ipynb)**  for details and illustrative plots.
+We used the mean farm size (ha) per administrative region of FAO WCA round 2000 from Fortin dataset. WCA is anchored to a census year 2000, but the true source year is some time between 1995-2005. These ADM1 regional observations are extended to annual series by using LINEQ country-level mean farm-size trajectories, which are available for 0-4 FAO WCA rounds. LINEQ is first interpolated into continuous 1986-2023 time series. When a country has <= 1 LINEQ observations, the script falls back to a broader subregional trend derived from the median country pattern within each SUBSUBREG. Each Fortin regional observation is then propagated backward and forward through time using the relevant country or subregional growth rates, producing annual farm-size estimates for every ADM1 unit. Remaining missing regions are filled using geographically nearest or touching donor regions, and the final product is exported as both a GeoPackage and a global multiband raster.
+
+
+See **[notebooks/Adjust-ADM1-Fortin-with-ADM0-LINEQ-2026-farm-size.ipynb](notebooks/Adjust-ADM1-Fortin-with-ADM0-LINEQ-2026-farm-size.ipynb)**  for details and illustrative plots.
+
 
